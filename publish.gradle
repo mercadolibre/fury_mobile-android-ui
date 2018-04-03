@@ -1,6 +1,6 @@
 publish {
     userOrg = 'mercadolibre'
-    repoName = 'android-releases'
+    repoName = 'android-public'
 
     groupId = project.group
     artifactId = project.name
@@ -11,7 +11,7 @@ publish {
     dryRun = false
 
     desc = 'UI android library for MercadoLibre frontends'
-    website = 'https://github.com/mercadolibre/ui'
+    website = 'https://github.com/mercadolibre/fury_mobile-android-ui'
 
     bintrayUser = System.getenv('BINTRAY_USER')
     bintrayKey = System.getenv('BINTRAY_KEY')
