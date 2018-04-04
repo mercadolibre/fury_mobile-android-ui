@@ -3,7 +3,7 @@ coverage:
     project:
       default: off
       minimum:  # minimum target of coverage needed to pass the check
-        target: 18%
+        target: 0%
       decrement:  # maximum decrement of coverage allowed
         target: auto
         threshold: 0.5%
@@ -11,7 +11,7 @@ coverage:
     patch:  # minimum coverage needed based only on the new code introduced on the PR
       default: off
       pr_coverage:
-        target: 60%
+        target: 0%
 comment:  # configuration of the details the bot will comment on the PR
   layout: "diff, flags"
   behavior: default
