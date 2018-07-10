@@ -15,6 +15,10 @@
         <item name="colorPrimary">@color/ui_components_android_color_primary</item>
         <item name="colorPrimaryDark">@color/ui_components_android_color_primary_dark</item>
 
+        <item name="android:colorAccent">@color/ui_components_android_color_accent</item>
+        <item name="android:colorPrimary">@color/ui_components_android_color_primary</item>
+        <item name="android:colorPrimaryDark">@color/ui_components_android_color_primary_dark</item>
+
         <!-- Ripple mask color -->
         <item name="android:colorControlHighlight">@color/ui_ripple_mask</item>
         <item name="colorControlHighlight">@color/ui_ripple_mask</item>
