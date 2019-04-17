@@ -55,6 +55,8 @@ public final class TextField extends LinearLayout {
     /* default */ boolean isShowingError;
     /* default */ boolean isShowingHelper;
     /* default */ int textAlign;
+    /* default */ int textAlign2;
+
     /**
      * Views
      */
