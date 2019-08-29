@@ -46,7 +46,6 @@ dependencies {
     implementation "com.android.support:design:$supportLibraryVersion"
 
     implementation "com.facebook.fresco:fresco:$frescoVersion"
-    implementation "com.facebook.fresco:webpsupport:$frescoVersion"
 
     implementation "uk.co.chrisjenx:calligraphy:$calligraphyVersion"
 
