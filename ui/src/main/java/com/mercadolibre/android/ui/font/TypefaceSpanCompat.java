@@ -3,6 +3,7 @@ package com.mercadolibre.android.ui.font;
 import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.text.TextPaint;
 import android.text.style.TypefaceSpan;
 
@@ -12,17 +13,17 @@ import android.text.style.TypefaceSpan;
  */
 public class TypefaceSpanCompat extends TypefaceSpan {
 
+    private final static float SKEW_X = -0.25f;
+
+    @NonNull
     private final Typeface typeface;
 
     /**
      * Default constructor
      * @param typeface typeface
      */
-    /* default */ TypefaceSpanCompat(final Typeface typeface) {
+    /* default */ TypefaceSpanCompat(@NonNull final Typeface typeface) {
         super("");
-        if (typeface == null) {
-            throw new IllegalArgumentException("typeface is null");
-        }
         this.typeface = typeface;
     }
 
@@ -36,7 +37,7 @@ public class TypefaceSpanCompat extends TypefaceSpan {
         apply(paint);
     }
 
-    private void apply(final Paint paint) {
+    private void apply(@NonNull final Paint paint) {
         final Typeface oldTypeface = paint.getTypeface();
         final int oldStyle = getOldStyle(oldTypeface);
         final int fakeStyle = oldStyle & ~typeface.getStyle();
@@ -46,13 +47,13 @@ public class TypefaceSpanCompat extends TypefaceSpan {
         }
 
         if ((fakeStyle & Typeface.ITALIC) != 0) {
-            paint.setTextSkewX(-0.25f);
+            paint.setTextSkewX(SKEW_X);
         }
 
         paint.setTypeface(typeface);
     }
 
-    private int getOldStyle(Typeface oldTypeface) {
+    private int getOldStyle(@Nullable Typeface oldTypeface) {
         if (oldTypeface == null) {
             return 0;
         }
