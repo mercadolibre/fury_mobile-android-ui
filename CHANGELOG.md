@@ -1,6 +1,7 @@
 # v8.1.0
 ## Agregado
 - Se agregan algunas annotations @Nulleable dado que la typeface puede resultar null en el caso de Calligraphy. Una vez que eliminemos la lib podemos depender de una typeface no nulleable.
+- Se agrega TypefaceSpanCompat para remplazar CalligraphyTypefaceSpan
 
 # v8.0.0
 ## Cambiado
