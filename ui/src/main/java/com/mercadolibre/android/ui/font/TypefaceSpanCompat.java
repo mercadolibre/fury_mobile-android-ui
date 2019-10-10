@@ -14,7 +14,11 @@ public class TypefaceSpanCompat extends TypefaceSpan {
 
     private final Typeface typeface;
 
-    TypefaceSpanCompat(final Typeface typeface) {
+    /**
+     * Default constructor
+     * @param typeface typeface
+     */
+    /* default */ TypefaceSpanCompat(final Typeface typeface) {
         super("");
         if (typeface == null) {
             throw new IllegalArgumentException("typeface is null");
@@ -34,7 +38,7 @@ public class TypefaceSpanCompat extends TypefaceSpan {
 
     private void apply(final Paint paint) {
         final Typeface oldTypeface = paint.getTypeface();
-        final int oldStyle = oldTypeface != null ? oldTypeface.getStyle() : 0;
+        final int oldStyle = getOldStyle(oldTypeface);
         final int fakeStyle = oldStyle & ~typeface.getStyle();
 
         if ((fakeStyle & Typeface.BOLD) != 0) {
@@ -46,5 +50,12 @@ public class TypefaceSpanCompat extends TypefaceSpan {
         }
 
         paint.setTypeface(typeface);
+    }
+
+    private int getOldStyle(Typeface oldTypeface) {
+        if (oldTypeface == null) {
+            return 0;
+        }
+        return oldTypeface.getStyle();
     }
 }
