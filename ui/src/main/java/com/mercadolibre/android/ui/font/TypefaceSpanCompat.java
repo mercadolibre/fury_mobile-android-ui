@@ -8,7 +8,7 @@ import android.text.TextPaint;
 import android.text.style.TypefaceSpan;
 
 /**
- * This class replace the CalligraphyTypefaceSpan from Calligraphy
+ * This class replace the <a href="https://github.com/chrisjenx/Calligraphy/blob/master/calligraphy/src/main/java/uk/co/chrisjenx/calligraphy/CalligraphyTypefaceSpan.java">CalligraphyTypefaceSpan</a> from <a href="https://github.com/chrisjenx/Calligraphy">Calligraphy</a>
  * The motivation is to no depend on a library implementation
  */
 public class TypefaceSpanCompat extends TypefaceSpan {
