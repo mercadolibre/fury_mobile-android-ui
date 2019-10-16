@@ -10,6 +10,7 @@ import android.text.style.TypefaceSpan;
  */
 @SuppressWarnings("unused")
 public class TypefaceSpanFactory {
+    @NonNull
     public TypefaceSpan create(@NonNull Typeface typeface) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
             return new TypefaceSpan(typeface);
