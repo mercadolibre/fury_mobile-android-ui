@@ -1,3 +1,7 @@
+# v8.2.0
+## Agregado
+- Se vuelve a agregar metodo TypefaceHelper.getTypeface(context, font, callback) por compatabilidad. Se depreca su uso por TypefaceHelper.getFontTypeface(context, font)
+
 # v8.1.0
 ## Agregado
 - Se agregan algunas annotations @Nulleable dado que la typeface puede resultar null en el caso de Calligraphy. Una vez que eliminemos la lib podemos depender de una typeface no nulleable.

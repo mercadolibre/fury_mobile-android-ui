@@ -5,7 +5,10 @@ import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.content.res.ResourcesCompat;
 import android.widget.TextView;
+
+import static android.support.v4.provider.FontsContractCompat.FontRequestCallback.FAIL_REASON_FONT_NOT_FOUND;
 
 /**
  * This class is used as a wrapper for our custom font.
@@ -51,6 +54,27 @@ public final class TypefaceHelper {
      */
     public static void setTypeface(@NonNull final Context context, @NonNull final Paint paint, @NonNull final Font font) {
         typefaceSetter.setTypeface(context, paint, font);
+    }
+
+    /**
+     * Get a typeface associated to the font passed. The typeface will be sent through the
+     * font callback passed as param
+     *
+     * @param context to use
+     * @param font to retrieve its typeface
+     * @param fontCallback to call when the typeface is retrieved
+     *
+     * @deprecated use geyFontTypeface instead
+     */
+    @SuppressWarnings("PMD.LinguisticNaming")
+    @Deprecated
+    public static void getTypeface(@NonNull final Context context, @NonNull final Font font, @NonNull final ResourcesCompat.FontCallback fontCallback) {
+        Typeface typeface = TypefaceHelper.geyFontTypeface(context, font);
+        if (typeface == null) {
+            fontCallback.onFontRetrievalFailed(FAIL_REASON_FONT_NOT_FOUND);
+        } else {
+            fontCallback.onFontRetrieved(typeface);
+        }
     }
 
     /**
