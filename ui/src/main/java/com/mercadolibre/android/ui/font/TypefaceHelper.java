@@ -64,7 +64,7 @@ public final class TypefaceHelper {
      * @param font to retrieve its typeface
      * @param fontCallback to call when the typeface is retrieved
      *
-     * @deprecated use geyFontTypeface instead
+     * @deprecated use TypefaceHelper{@link #geyFontTypeface(Context, Font)} instead
      */
     @SuppressWarnings("PMD.LinguisticNaming")
     @Deprecated
@@ -78,7 +78,7 @@ public final class TypefaceHelper {
     }
 
     /**
-     * Get a tyoeface associated to the font passed.
+     * Get a typeface associated to the font passed.
 
      * @param context to use
      * @param font to use
