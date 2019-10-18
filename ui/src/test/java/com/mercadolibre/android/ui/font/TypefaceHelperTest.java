@@ -70,7 +70,7 @@ public class TypefaceHelperTest {
     }
 
     private void whenGettingTypeface(Font font) {
-        typeface = TypefaceHelper.geyFontTypeface(RuntimeEnvironment.application, font);
+        typeface = TypefaceHelper.getFontTypeface(RuntimeEnvironment.application, font);
     }
 
     private void thenTypefaceIsReturnedAsync() {

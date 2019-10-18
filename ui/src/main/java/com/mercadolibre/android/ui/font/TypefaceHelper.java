@@ -64,12 +64,12 @@ public final class TypefaceHelper {
      * @param font to retrieve its typeface
      * @param fontCallback to call when the typeface is retrieved
      *
-     * @deprecated use TypefaceHelper{@link #geyFontTypeface(Context, Font)} instead
+     * @deprecated use TypefaceHelper{@link #getFontTypeface(Context, Font)} instead
      */
     @SuppressWarnings("PMD.LinguisticNaming")
     @Deprecated
     public static void getTypeface(@NonNull final Context context, @NonNull final Font font, @NonNull final ResourcesCompat.FontCallback fontCallback) {
-        Typeface typeface = TypefaceHelper.geyFontTypeface(context, font);
+        Typeface typeface = TypefaceHelper.getFontTypeface(context, font);
         if (typeface == null) {
             fontCallback.onFontRetrievalFailed(FAIL_REASON_FONT_NOT_FOUND);
         } else {
@@ -85,7 +85,7 @@ public final class TypefaceHelper {
      * @return associated typeface
      */
     @Nullable
-    public static Typeface geyFontTypeface(@NonNull final Context context, @NonNull Font font) {
+    public static Typeface getFontTypeface(@NonNull final Context context, @NonNull Font font) {
         return typefaceSetter.getTypeface(context, font);
     }
 
