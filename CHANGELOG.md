@@ -1,3 +1,7 @@
+# v8.2.1
+## Cambiado
+- Se setea el fondo de MeliButon de SecondaryActions Para MP a BLANCO
+
 # v8.2.0
 ## Agregado
 - Se vuelve a agregar metodo TypefaceHelper.getTypeface(context, font, callback) por compatabilidad. Se depreca su uso por TypefaceHelper.getFontTypeface(context, font)
