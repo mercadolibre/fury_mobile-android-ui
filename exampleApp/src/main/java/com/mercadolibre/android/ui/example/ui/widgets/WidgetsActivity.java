@@ -50,4 +50,8 @@ public class WidgetsActivity extends BaseActivity {
     public void openTextfieldWithLabelActivity(View view) {
         startActivity(new Intent(this, TextFieldActivity.class));
     }
+
+    public void openProgressBarActivity(View view) {
+        startActivity(new Intent(this, ProgressBarActivity.class));
+    }
 }

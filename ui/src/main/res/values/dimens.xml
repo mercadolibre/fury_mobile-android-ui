@@ -99,4 +99,7 @@
     <dimen name="ui_8m">64dp</dimen>
     <dimen name="ui_9m">72dp</dimen>
     <dimen name="ui_10m">80dp</dimen>
+
+    <!-- MeliProgressBar-->
+    <dimen name="ui_progress_bar_radius">6dp</dimen>
 </resources>

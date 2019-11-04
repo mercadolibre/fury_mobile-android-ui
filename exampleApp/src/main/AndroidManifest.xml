@@ -106,6 +106,14 @@
                 android:value="com.mercadolibre.android.ui.example.ui.widgets.WidgetsActivity"/>
         </activity>
         <activity
+            android:name=".ui.widgets.ProgressBarActivity"
+            android:label="@string/title_activity_progress_bar"
+            android:parentActivityName=".ui.widgets.WidgetsActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.mercadolibre.android.ui.example.ui.widgets.WidgetsActivity"/>
+        </activity>
+        <activity
             android:name=".ui.widgets.WidgetsActivity"
             android:label="@string/title_activity_widgets"
             android:parentActivityName=".ui.MainActivity">

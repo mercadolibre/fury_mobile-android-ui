@@ -244,4 +244,9 @@
             <enum name="disable" value="1"/>
         </attr>
     </declare-styleable>
+
+    <declare-styleable name="MeliProgressBar">
+        <attr name="maxLoadingTime" format="integer" />
+        <attr name="finishAnimTime" format="integer" />
+    </declare-styleable>
 </resources>

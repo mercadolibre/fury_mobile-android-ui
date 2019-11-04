@@ -73,6 +73,14 @@
             style="@style/Button.Action.Primary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="openProgressBarActivity"
+            android:layout_marginBottom="10dp"
+            android:text="Progress Bar" />
+
+        <Button
+            style="@style/Button.Action.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:onClick="openOtherWidgetsActivity"
             android:text="Other widgets" />
 
