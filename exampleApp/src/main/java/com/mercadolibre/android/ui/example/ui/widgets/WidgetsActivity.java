@@ -23,6 +23,10 @@ public class WidgetsActivity extends BaseActivity {
         startActivity(new Intent(this, ButtonsActivity.class));
     }
 
+    public void openMaterialButtonsActivity(View view) {
+        startActivity(new Intent(this, MaterialButtonsActivity.class));
+    }
+
     public void openMLButtonsActivity(View view) {
         startActivity(new Intent(this, MLButtonsActivity.class));
     }

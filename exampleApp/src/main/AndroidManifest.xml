@@ -73,6 +73,14 @@
                 android:value="com.mercadolibre.android.ui.example.ui.widgets.WidgetsActivity"/>
         </activity>
         <activity
+            android:name=".ui.widgets.MaterialButtonsActivity"
+            android:label="@string/title_activity_buttons"
+            android:parentActivityName=".ui.widgets.WidgetsActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.mercadolibre.android.ui.example.ui.widgets.WidgetsActivity"/>
+        </activity>
+        <activity
             android:name=".ui.widgets.MLButtonsActivity"
             android:label="@string/title_activity_buttons"
             android:parentActivityName=".ui.widgets.WidgetsActivity">

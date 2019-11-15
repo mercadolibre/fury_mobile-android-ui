@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="ResourceName">
+
+    <style name="Material.Regular" parent="MLFont.Regular" />
+
+    <style name="Material.Regular.Material.Button" parent="Widget.MaterialComponents.Button" />
+
+    <style name="Material.Button" parent="Regular.Button">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">@dimen/ui_button_height</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:padding">13dp</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textSize">@dimen/ui_fontsize_medium</item>
+        <item name="iconGravity">textStart</item>
+        <item name="iconPadding">@dimen/ui_button_padding</item>
+    </style>
+
+    <style name="Material.Button.Action" />
+
+    <style name="Material.Button.Action.Primary">
+        <item name="android:background">@drawable/ui_primary_action_button</item>
+        <item name="android:textColor">@color/ui_primary_action_button_text_color</item>
+        <item name="iconTint">@color/ui_primary_action_button_text_color</item>
+        <item name="rippleColor">@color/ui_components_primary_color_pressed</item>
+    </style>
+
+    <style name="Material.Button.Action.Secondary" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="strokeColor">@color/ui_secondary_action_button_text_color</item>
+        <item name="android:textColor">@color/ui_secondary_action_button_text_color</item>
+        <item name="iconTint">@color/ui_secondary_action_button_text_color</item>
+        <item name="android:textAppearance">@style/MLFont.Light</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">@dimen/ui_button_height</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:padding">13dp</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textSize">@dimen/ui_fontsize_medium</item>
+        <item name="iconGravity">textStart</item>
+        <item name="iconPadding">@dimen/ui_button_padding</item>
+        <item name="rippleColor">@color/ui_ripple_mask</item>
+    </style>
+</resources>
