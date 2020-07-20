@@ -271,6 +271,8 @@ public final class TextField extends LinearLayout {
             label.setText(labelText);
             label.setVisibility(View.VISIBLE);
             setHintAnimationEnabled(false);
+            // Set label to input in order to be recognized by Appium
+            input.setContentDescription(labelText);
         }
 
         final LinearLayout.LayoutParams params =
