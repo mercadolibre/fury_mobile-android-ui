@@ -1,18 +1,69 @@
-publish {
-    userOrg = 'mercadolibre'
-    repoName = 'android-public'
+apply plugin: 'maven-publish'
 
-    groupId = project.group
-    artifactId = project.name
-    publishVersion = project.version
+publishing {
+    repositories {
+        maven {
+            url "https://artifacts.mercadolibre.com/repository/android-releases"
+            credentials {
+                credentials {
+                    username System.getenv("NEXUS_DEPLOYER_USER")
+                    password System.getenv("NEXUS_DEPLOYER_PASSWORD")
+                }
+            }
+        }
+    }
+}
 
-    uploadName = "$groupId.$artifactId"
+afterEvaluate {
+    task javadoc(type: Javadoc) {
+        source = android.sourceSets.main.java.srcDirs
+        classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+        destinationDir = file("../javadoc/")
+        failOnError false
+    }
 
-    dryRun = false
+    task javadocJar(type: Jar, dependsOn: javadoc) {
+        classifier = 'javadoc'
+        from javadoc.destinationDir
+    }
 
-    desc = 'UI android library for MercadoLibre frontends'
-    website = 'https://github.com/mercadolibre/fury_mobile-android-ui'
+    task sourceJar(type: Jar) {
+        from android.sourceSets.main.java.srcDirs
+        classifier "sources"
+    }
+    
+    publishing {
+        publications {
+            def groupIdPublication = project.group
+            def artifactIdPublication = project.name
+            def publishVersion = project.version
 
-    bintrayUser = System.getenv('BINTRAY_USER')
-    bintrayKey = System.getenv('BINTRAY_KEY')
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                groupId = groupIdPublication
+                artifactId = artifactIdPublication
+                version = publishVersion
+                artifact("$buildDir/outputs/aar/${artifactIdPublication}-release.aar")
+                artifact(sourceJar)
+                artifact(javadocJar)
+                pom.withXml {
+                    def dependenciesNode = asNode().appendNode('dependencies')
+                    applyDependenciesToPOM(dependenciesNode, configurations.api.allDependencies)
+                    applyDependenciesToPOM(dependenciesNode, configurations.implementation.allDependencies)
+                }
+            }
+        }
+    }
+}
+
+static def applyDependenciesToPOM(Object dependenciesNode, DependencySet allDependencies) {
+    allDependencies.each {
+        if (it.group != null && (it.name != null && !it.name.equals("unspecified")) &&
+                (it.version != null && !it.version.equals("unspecified"))) {
+            def dependencyNode = dependenciesNode.appendNode('dependency')
+            dependencyNode.appendNode('groupId', it.group)
+            dependencyNode.appendNode('artifactId', it.name)
+            dependencyNode.appendNode('version', it.version)
+        }
+    }
 }

@@ -65,7 +65,7 @@ deploy-release-job: &deployReleaseJob
       - add_ssh_keys
       - run:
           name: Run Deploy
-          command: ./gradlew assemble bintrayUpload --no-build-cache --rerun-tasks
+          command: ./gradlew assembleRelease publish --no-build-cache --rerun-tasks -x exampleApp:assembleRelease
 ##
 # We define our default workflow
 # This workflow will be used by our default builds
