@@ -7,7 +7,6 @@ buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:$androidGradlePluginVersion"
         classpath "com.monits:static-code-analysis-plugin:$scaPluginVersion"
-        classpath "com.novoda:bintray-release:$bintrayReleasePluginVersion"
     }
 }
 

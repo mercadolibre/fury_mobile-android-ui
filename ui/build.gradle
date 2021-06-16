@@ -1,5 +1,4 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.novoda.bintray-release'
 apply plugin: 'com.monits.staticCodeAnalysis'
 apply from: rootProject.file('jacoco.gradle')
 apply from: rootProject.file('publish.gradle')
@@ -43,7 +42,7 @@ android {
 dependencies {
     implementation project(":ui_legacy")
     implementation "com.google.android.material:material:$materialVersion"
-    implementation "androidx.constraintlayout:constraintlayout:$constraintlayoutVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
 
     api "com.facebook.fresco:fresco:$frescoVersion"
     api "com.facebook.fresco:webpsupport:$frescoVersion"
