@@ -1,4 +1,11 @@
+# v9.0.3
+## Cambiado
+- Cambio en MLThemeLegacy de AppCompat a MaterialComponents.Bridge
+
 # v9.0.2
+## Cambiado
+- Bump libs
+
 # v9.0.1
 ## Cambiado
 - Migración a Nexus

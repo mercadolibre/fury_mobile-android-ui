@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <style name="Theme.MLThemeLegacy" parent="@style/Theme.AppCompat.Light.NoActionBar">
+    <style name="Theme.MLThemeLegacy" parent="@style/Theme.MaterialComponents.Light.NoActionBar.Bridge">
 
         <item name="android:windowBackground">@color/background_color</item>
         <item name="windowActionModeOverlay">true</item>
